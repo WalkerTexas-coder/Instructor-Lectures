@@ -12,6 +12,33 @@
 var temp1 = 35;
 var temp2 = 350;
 var temp3 = 212;
+//create a function called farenheit
+const farenheit = (number) => {
+    // takes parameter of (number)
+    // checks if argument is a number
+    if (typeof number === "number") {
+        // checks if number is less than 212
+        if (number < 212) {
+            return `${number} is less than the boiling point`
+        }
+        // checks if number is greater than 212
+        else if (number > 212) {
+            return `${number} is greater than the boiling point`;
+        }
+        // checks if number is equal to 212
+        else {
+            // returns strings that utilize (number)
+            return `${number} is the boiling point`;
+        }
+    }
+    else {
+        return "NaN"
+    }
+}
+console.log(farenheit(temp1));
+console.log(farenheit(temp2));
+console.log(farenheit(temp3));
+console.log(farenheit("hello"));
 
 // --------------------2) Create a function that takes in an array of numbers and returns an array with each number multiplied by 5.
 // Use the test variable provided below. Expected output: [15, 35, 0, 30, -45]
