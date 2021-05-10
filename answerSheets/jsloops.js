@@ -17,6 +17,7 @@ for (let i = 1; i < 21; i++) {
     }
 }
 
+
 // Looping over an array. Consider this variable:
 
 var nums = [3, 57, -9, 20, 67]
