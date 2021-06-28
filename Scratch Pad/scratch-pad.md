@@ -1,0 +1,6 @@
+1. "What are you trying to acomplish?"
+    a - "what do you need to acomplish that"
+    b - "whats a resource we can use to acomplish this"
+    c - " What are some of the tools we learned about that will be useful here"
+2. "can you take this code and explain to me whats happening ?"
+    a - "we can go line by line if you want"
