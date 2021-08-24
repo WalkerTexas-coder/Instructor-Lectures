@@ -1,3 +1,36 @@
+#   THEN WE WRITE THE CODE
+class Car
+    def model=car_model
+      @model = car_model
+    end
+    def model
+      @model
+    end
+  end
+  
+#_______________________________________________________
+# class Car
+
+#     def initialize color='unpainted'
+#       @color = color
+#     end
+  
+#     def color
+#       @color
+#     end
+  
+#     def model=car_model
+#       @model = car_model
+#     end
+  
+#     def model
+#       @model
+#     end
+  
+#   end
+
+#_______________________________________________________
+
 class Car
     # once we have the class we can change the describe fromclass 'Car' to Car   --
     #  Bring in Color first -- then make -- then speed

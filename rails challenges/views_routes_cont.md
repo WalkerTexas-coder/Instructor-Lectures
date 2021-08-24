@@ -1,11 +1,16 @@
 Alright in this talk we have a lot of moving parts but they all need to work in harmony for our goals to be acomplished. 
 
+Today were gonna be dealing with three major parts we need to keep track of our
+1. Routes
+2. Views
+3. Controllers
+
 In the past we've made SPA's -- Single page apps good interview vocab word -- you can navigate to the site and do eveyrthing without linking to another page. today we are going to make multi page sites. 
 
 # Getting Started
-    as always we are going ot need a ot make a rails app
+    as always we are going ot need a yo make a rails app
 ____________________________________________
-    $ rails new c_r_v -d postgresql -T
+    $ rails new food_app -d postgresql -T -G
 
     $ rails db:create
 
@@ -14,17 +19,21 @@ ____________________________________________
     $ rails s
 ____________________________________________
 
-
 # Overview
 Understanding the basics of creating a request response cycle in Rails
 Generating a view for the user
 Navigating between views
 # Learning Objectives
 Understanding the anatomy of a Rails route
+    Identifyiing the 
+        url
+        the controller
+        the method
 Using generate to create a controller
-Creating a method in the controller
+    Creating methods in the controller
 Creating a view with html.erb
 Linking between views
+ link_to
 # Vocabulary
 controller
 view
@@ -93,6 +102,8 @@ end
 ____________________________________________
 
 So we've bounced back once lets bounce again over to routes 
+
+### Root_to
 
 In roots I want to make a lnading page for my user so they see what they want as soon as they navigate to my site so in my routes I am going to add my root
 

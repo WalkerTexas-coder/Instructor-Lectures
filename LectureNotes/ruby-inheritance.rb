@@ -1,38 +1,6 @@
-# _______________________________________________________________________________________
-
-class FoodOrder
-  attr_accessor :restaurant_name, :meal_order
-  def initialize(restaurant_name, meal_order)
-            @restaurant_name = restaurant_name
-            @meal_order = meal_order
-        end
-
-        def print_order_ticket
-            puts " An order from #{restaurant_name} for a #{meal_order}"
-        end
-end
-
-sandwhich_order = FoodOrder.new("Jimmy Johns", "No.11")
-
-puts sandwhich_order
-p sandwhich_order
-
-# The variable starting with @ is an instance variable, meaning it belongs to the "instance" of a class (an object). The instance variable @name belongs to class Person. Each "instance" of the class Person has its own set of instance variables independent of other Person objects.
-
-# You can't just access an instance variable from outside of an object, as you can with variables in JavaScript. Think local scope.
-
-# p person_one.name
-# # => returns an error: undefined method `name' for #<Person:0x00007fc99f09d420 @name="Jon Snow"> (NoMethodError)
-
-
-
-sandwhich_order.meal_order = ("No.2")
-
-sandwhich_order.print_order_ticket
-
-
-
-
+# Class in ruby 
+    # super()
+    
 # _______________________________________________________________________________________
 # So when were making a superclass we are going to want to pass in information that we want every child of the class to have in common. 
 class Orderer
@@ -42,20 +10,18 @@ class Orderer
         @shop = shop
         @user = user
         @order = order
+        @date = Time.now
     end
 
     def get_order
-        p @user, @shop, @order
+    #    puts "#{@user}, has ordered #{@order} from #{@shop} on/at #{@date}"
+       @order_ticket = "#{@user}, has ordered #{@order} from #{@shop} on/at #{@date}"
     end
 end
 
-t_shirt = Orderer.new('Donut Tees', 'Austin', '20 yellow striped on black, Donut Tee Shirts' )
+# t_shirt = Orderer.new('Donut Tees', 'Austin', '20 yellow striped on black, Donut Tee Shirts' )
 
-t_shirt.get_order
-t_shirt.user = "Erik"
-t_shirt.get_order
-t_shirt.order = "1 Tshirt"
-t_shirt.get_order
+# t_shirt.get_order
 
 
 # _______________________________________________________________________________________
@@ -66,28 +32,32 @@ class TshirtOrderer < Orderer
         # The super() method is used in the child class. It calls the method of the same name in the parent class. After invoking super(), the child class will have access to the instance variables within that method.
         @number_of_shirts = number
         @t_shirt_style = style
+
     end
 
     def get_tshirt_order_info
-        "An order for #{@number_of_shirts} #{@t_shirt_style} shirts for user #{@user} from #{@shop} shop"
+        "An order for #{@number_of_shirts} #{@t_shirt_style} shirts for user #{@user} from #{@shop} shop on #{@date}"
     end
 end
 
-orderArray = []
+donut_shirts = TshirtOrderer.new("Donut Media", "Austin", 1, "RIP Pop Up & Down Headlights")
+synthwave_shirt = TshirtOrderer.new("local shirt shop", "LEARN STUDENT" , 1, "Synthwave Japanese theme")
+# donut_shirts.get_tshirt_order_info
+p donut_shirts
+# order_array = []
 
-donut_shirts = TshirtOrderer.new("Donut Media", "Austin", "1", "RIP PopUp&Down Headlights")
-donut_shirts.get_tshirt_order_info
+# order_array << donut_shirts
+# order_array << synthwave_shirt
 
-orderArray << donut_shirts
+# puts order_array
+# p order_array
 
 # _______________________________________________________________________________________
 class CarOrderer < Orderer
     attr_accessor :ssn, :deposit, :ssn, :depsoit_info, :location
     def initialize (shop, user, order)
         super(shop, user, order)
-        @shop = shop
-        @user = user
-        @order = order
+
     end
 
     def set_background_info (ssn, depsoit_info, location)
@@ -97,3 +67,45 @@ class CarOrderer < Orderer
     end
 end
 
+heisenberg_mobile = CarOrderer.new("Pontiac", "Walter White", "Aztec")
+heisenberg_mobile.set_background_info(123456789, "cash", "ABQ")
+
+# order_array << heisenberg_mobile
+
+# p order_array
+
+# _______________________________________________________________________________________
+
+class FoodOrder < Orderer
+    attr_accessor :entree_one, :side_one, :drink_one, :entree_two, :side_two, :drink_two
+    def initialize(shop, user, order)
+        super(shop, user, order)
+    end
+    def order_Number_one(entree, side, drink)
+        @entree_one= entree
+        @side_one= side
+        @drink_one = drink
+    end
+    def order_Number_two(entree, side, drink)
+        @entree_two= entree
+        @side_two= side
+        @drink_two = drink
+    end
+    def get_order_details
+        get_order
+        if entree_one != nil && entree_two == nil
+            p @order_ticket + " The order is for #{@entree_one} with a #{@side_one} for a side and a #{@drink_one} for a drink."
+        elsif entree_one != nil && entree_two != nil
+            p @order_ticket + " The first order is #{@entree_one} with a #{@side_one} for a side and a #{@drink_one} for a drink. The second order is #{@entree_one} with a #{@side_two} for a side and a #{@drink_two} for a drink"
+        else 
+           p @order_ticket + " no other information was given, reach-out to contact"
+        end
+    end
+end
+
+jj = FoodOrder.new("Jimmy Johns", "Austin", 12345)
+
+# jj.order_Number_one("NO.7, no mayo, add mustard", "Salt and vinegar Chips", "Coke")
+# jj.order_Number_two("NO.11", "BBQ chips", "Coke")
+# jj.side_two = "Plain chips"
+# jj.get_order_details
