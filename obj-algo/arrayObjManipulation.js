@@ -22,7 +22,7 @@ const peopleJob = (array) => {
 
 // Use forEach to loop over each object in the array
 const peopleJob = (array) => {
-    array.forEach((object) => {
+    array.forEach((array) => {
         // Just console log to see the name on each object
         console.log(object.name)
     })

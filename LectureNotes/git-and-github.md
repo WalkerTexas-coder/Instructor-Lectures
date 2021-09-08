@@ -1,7 +1,4 @@
 # Git and GitHub
-
-
-
 ### Git and GitHub
 Git - software that tracks version control
 GitHub - GUI for git technology
@@ -16,9 +13,9 @@ GitHub - GUI for git technology
 - pull
 - GUI
 
-# Set up Git Configuartion locally
+# Set up Git Configuration locally
 
-Checking the configuration for user name and password:  
+Configuration for user name and password:  
 - $ git config --global user.name "username"
 - $ git config --global user.email "user@email"
 - $ git config --global credential.helper osxkeychain

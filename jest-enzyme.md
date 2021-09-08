@@ -3,13 +3,13 @@
 
 - Jest we've interacted with before but it was built by Facebook for purpose is a bit deeper than what we have used it for int the past. React comes bundled with Jest; it does not need to be installed separately.
 - Jest acts as a test runner, assertion library, and mocking library.
-- Jest also provides Snapshot testing, the ability to create a rendered ‘snapshot’ of a component and compare it to a previously saved ‘snapshot’. The test will fail if the two do not match. this would be a good subject for a tech talk abut we wont be dealing with it today. Today we are going to be using a different tool called "Enzyme"
+- Jest also provides Snapshot testing, the ability to create a rendered ‘snapshot’ of a component and compare it to a previously saved ‘snapshot’. The test will fail if the two do not match. This would be a good subject for a tech talk abut we wont be dealing with it today. Today we are going to be using a different tool called "Enzyme"
 - Enzyme, created by Airbnb, adds some great additional utility methods for rendering a component (or multiple components), finding elements, and interacting with elements.
 
 ### Jest and Enzyme
 - Both Jest and Enzyme are specifically designed to test React applications, Jest can be used with any other Javascript app but Enzyme only works with React.
-- Jest can be used to test React projects without Enzyme. It does this by rendering components and test with snapshots, Enzyme simply adds additional functionality.
-Enzyme can be used without Jest, however Enzyme must be paired with another test runner if Jest is not used. 
+- Jest can be used to test React projects without Enzyme.
+- Enzyme can be used without Jest, however Enzyme must be paired with another test runner if Jest is not used. 
  
 As described, we will use:
 -   Jest as the test runner, assertion library, and mocking library
@@ -38,8 +38,9 @@ test('renders learn react link', () => {
 ```
 ## Running Jest
 `$ yarn test`
-this test should fail because Sarah has already changed what our App project shows when it renders. 
-I just wanted ot show you that his testing suite works without Enzyme as jest will be our "Test runner" If we look in the package.json file we can see the line 
+this test should fail because Sarah has already changed what our App project shows when it renders. In fact becuase all our text is inside the other components this test wont do us much good we'll need to set up some other tools.
+
+I just wanted  show you that his testing suite works without Enzyme as jest will be our "Test runner" If we look in the package.json file we can see the line 
 
 `"test": "react-scripts test"`
 
@@ -48,16 +49,7 @@ this is the "test" in our $ yarn test
 # Enzyme
 `$ yarn add -D enzyme react-test-renderer enzyme-adapter-react-16`
 
-# Organization
-- lets move away from testing our general app and start the practice of making solid tests for each of our components and pages. 
-in each of the folders we are going to make new folders for jest to identify
-the syntax for these folders is 
 
-`src/pages/__tests__/`
-`src/components/__tests__/`
-
-inside our src/pages/tests
-well make a new file called CatIndex.test.js
 
 
 # Imports to component-name.test.js
@@ -72,7 +64,17 @@ configuration
 ```javascript
 Enzyme.configure({ adapter: new Adapter() })
 ```
+Here we are going to have Enzyme configure its set up by destructing a new instance of adapter from the class adapter that we imported
 <hr>
+
+from here we can open up our describe and it blocks
+
+```javascript
+describe("When App renders", () => {
+  it("displays a Header and Footer", () => {
+```
+
+Cool we've caught up to what we're most familair with in testing 
 
 ## Arrange
 Set up a situation, ex. shallow rendering a component
@@ -83,7 +85,6 @@ const renderedApp = shallow(<App/>
 ## Shallow
 - Renders only the single component, not including its children. This is useful to isolate the component for pure unit testing. It protects against changes or bugs in a child component altering the behaviour or output of the component under test
 - As of Enzyme 3 shallow components do have access to lifecycle methods by default
-- Cannot access props passed into the root component (therefore also not default props), but can those passed into child components, and can test the effect of props passed into the root component. This is as with shallow(<MyComponent />), you're testing what MyComponent renders - not the element you passed into shallow
 <hr>
 
 ## Act
@@ -133,7 +134,9 @@ describe("When App renders", () => {
     // https://enzymejs.github.io/enzyme/docs/api/selector.html
     // give enzymes selectors a look over when you are thinking about how to form your tests. 
     const renderedHomeRoute = renderedApp.find('[path="/"]')
+        // debug
     console.log("rendered home debug", renderedHomeRoute.debug())
+        // props
     console.log("rendered home props", renderedHomeRoute.props())
     //Assert
     expect(renderedHomeRoute.length).toEqual(1)
@@ -141,6 +144,21 @@ describe("When App renders", () => {
   })
 })
 ```
+
+
+# Organization
+- lets move away from testing our general app and start the practice of making solid tests for each of our components and pages. 
+in each of the folders we are going to make new folders for jest to identify
+the syntax for these folders is 
+
+`src/pages/__tests__/`
+`src/components/__tests__/`
+
+inside our src/pages/tests
+well make a new file called CatIndex.test.js
+
+
+
 # src/components/__tests__/Heard.test.js
 ```javascript
 import React from 'react'
@@ -212,3 +230,20 @@ describe('When Footer renders', () => {
   })
 })
 ```
+
+RECAP 
+# __tests__
+    Folders that jest looks for using the command 
+    $ yarn jest
+# Imports and Configuration
+    Import ... from ...
+    Enzyme.configure({ adapter: new Adapter()})
+# Arrange Act Assert
+    ex. shallow
+        find
+        expect
+# Selectors syntax
+    https://enzymejs.github.io/enzyme/docs/api/selector.html
+# Assertion syntax
+    expect(<componentVariable>.<elementQueryMethod>()).<matcher>(<expectedValue>)
+    expect(<actualThing>).<matcher>(<expectedValue>)
