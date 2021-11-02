@@ -3,7 +3,7 @@
     
 # _______________________________________________________________________________________
 # So when were making a superclass we are going to want to pass in information that we want every child of the class to have in common. 
-class Orderer
+class OrderApp
     attr_accessor :shop, :user, :order
     
     def initialize(shop, user, order)
@@ -26,8 +26,9 @@ end
 
 # _______________________________________________________________________________________
 
-class TshirtOrderer < Orderer
-    def initialize (shop, user, number, style)
+class TshirtOrderApp < OrderApp
+    attr_accessor :shop, :user, :order, :number, :style
+    def initialize (shop, user, order, style, number=1)
         super(shop, user, order)
         # The super() method is used in the child class. It calls the method of the same name in the parent class. After invoking super(), the child class will have access to the instance variables within that method.
         @number_of_shirts = number
@@ -36,12 +37,16 @@ class TshirtOrderer < Orderer
     end
 
     def get_tshirt_order_info
-        "An order for #{@number_of_shirts} #{@t_shirt_style} shirts for user #{@user} from #{@shop} shop on #{@date}"
+        if @number > 200
+            "You have exceeded the limit of shirts that can be purchased at this time"
+        else
+            "An order for #{@number_of_shirts} #{@t_shirt_style} shirts for user #{@user} from #{@shop} shop on #{@date}"
+        end
     end
 end
 
-donut_shirts = TshirtOrderer.new("Donut Media", "Austin", 1, "RIP Pop Up & Down Headlights")
-synthwave_shirt = TshirtOrderer.new("local shirt shop", "LEARN STUDENT" , 1, "Synthwave Japanese theme")
+donut_shirts = TshirtOrderer.new("Donut Media", "Austin", "RIP Pop Up & Down Headlights", 2)
+synthwave_shirt = TshirtOrderer.new("local shirt shop", "LEARN STUDENT", "Synthwave Japanese theme")
 # donut_shirts.get_tshirt_order_info
 p donut_shirts
 # order_array = []
@@ -53,30 +58,8 @@ p donut_shirts
 # p order_array
 
 # _______________________________________________________________________________________
-class CarOrderer < Orderer
-    attr_accessor :ssn, :deposit, :ssn, :depsoit_info, :location
-    def initialize (shop, user, order)
-        super(shop, user, order)
 
-    end
-
-    def set_background_info (ssn, depsoit_info, location)
-        @ssn = ssn
-        @depsoit_info = depsoit_info
-        @location = location
-    end
-end
-
-heisenberg_mobile = CarOrderer.new("Pontiac", "Walter White", "Aztec")
-heisenberg_mobile.set_background_info(123456789, "cash", "ABQ")
-
-# order_array << heisenberg_mobile
-
-# p order_array
-
-# _______________________________________________________________________________________
-
-class FoodOrder < Orderer
+class FoodOrderApp < OrderApp
     attr_accessor :entree_one, :side_one, :drink_one, :entree_two, :side_two, :drink_two
     def initialize(shop, user, order)
         super(shop, user, order)
@@ -105,7 +88,7 @@ end
 
 jj = FoodOrder.new("Jimmy Johns", "Austin", 12345)
 
-# jj.order_Number_one("NO.7, no mayo, add mustard", "Salt and vinegar Chips", "Coke")
-# jj.order_Number_two("NO.11", "BBQ chips", "Coke")
-# jj.side_two = "Plain chips"
-# jj.get_order_details
+jj.order_Number_one("NO.7, no mayo, add mustard", "Salt and vinegar Chips", "Coke")
+jj.order_Number_two("NO.11", "BBQ chips", "Coke")
+jj.side_two = "Plain chips"
+jj.get_order_details

@@ -4,7 +4,14 @@
 var car1 = "Ford";
 var car2 = "Jeep";
 var car3 = "Hyundai";
+
+// We need something to hold all these cars!
+
+
 var cars = ["Ford", "Jeep", "Hyundai"];
+
+// so here we go 
+
 
 //  VALUE
 // "Ford" is a value

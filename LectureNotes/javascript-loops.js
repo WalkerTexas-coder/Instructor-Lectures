@@ -12,7 +12,7 @@
 
 // let: a local variable declaration, local to the block of code it is called in. Some implications... cannot be read until the code block is initialized.
 
-// global scope: variables called in the code base outside of functions, 
+// global scope: variables called in the code base outside of functions,
 // generally const and var
 
 
@@ -24,7 +24,7 @@
 // Invoking
 // For best pratice, define with let and i for index
 
-      
+
 // We use let because it allows us to mutate its value while at the same time can find it whithin the local scope
 
 // We tell index to start at index of 0
@@ -86,8 +86,9 @@ for(let i=0; i<3; i++) {
 
 // loop without using console.log - instructions are still being run
 for(let i=0; i<3; i++) {
-  i + 3;
+  i = i + 3;
 }
+
 //____________________________________________________________
 
 // basic loop using a decrementor (--)

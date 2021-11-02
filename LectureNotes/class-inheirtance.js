@@ -1,20 +1,27 @@
 // Yesterday we learned about Classes today we're going to add a layer to that cake -- with inheiritance.
-// Key Words: 
-// extends 
+
+// classes are plans/ blue prints /reciepes for an object
+// If I have a reciepe for choclate chicp cookies how many cookies do I have?
+// if I have a reciepe for choclate chip cookies how many cookies can I make?
+
+
+// Key Words:
+// extends
 // Super()
 
 
 
 //__________________________________________________
 class Engine {
-  constructor(cylinders=0) {
+  constructor(numberOfCylinders=0, typeOfEngine) {
     this.oilLevel = 100;
     this.rpm = 0;
-    this.cylinders = cylinders
+    this.cylinders = numberOfCylinders
+    this.layout = typeOfEngine
     this.running = false
   }
   start() {
-    this.rpm = 900;
+    this.rpm = 1000;
     this.running = true
   }
 
@@ -24,51 +31,62 @@ class Engine {
   }
 }
 
-
+// Here we are going to see the extends key word for the first time
+// Whenever we are working in a class component and we see the extends key word we can know that the class we are in is a child class.
 class SuperChargedEngine extends Engine{
-    constructor(cylinders, hrspwrs){
+    constructor(cylinders, hrspwrs=330){
+      // next we are going to see the key word super. Super is a key word that passess all the attributes from the parent class into the child class.
       super(cylinders)
-      this.hrspwrs = hrspwrs? hrspwrs : 330
+      this.hrspwrs = hrspwrs
     }
-    accelerate(){
-      if (this.running == true) {
-        this.rpm = this.rpm + 700
+    revEngine(){
+    this.running ? this.rpm = this.rpm + 500 : "Start your Engine"
       }
     }
 
-    decelerate(){
+    throttleDown(){
       this.rpm = this.rpm - 700
     }
 }
 var roots = new SuperChargedEngine(8, 500)
+
 console.log(roots);
 console.log(roots.rpm);
 roots.start();
 console.log(roots.rpm);
-roots.accelerate()
+roots.revEngine()
 console.log(roots.rpm);
-roots.accelerate()
+roots.revEngine()
 console.log(roots.rpm);
-roots.accelerate()
+roots.revEngine()
 console.log(roots.rpm);
-roots.decelerate()
+roots.throttleDown()
 console.log(roots.rpm);
 
 var turbine = new SuperChargedEngine(4, 260)
+
 turbine.start()
 console.log("START YOUR ENGINES", turbine);
-turbine.accelerate()
+turbine.revEngine()
 console.log(turbine);
 
 
-class Horse{
-  constructor(mColor, cColor){
-    this.legs = 4
-    this.running = "no"
-    this.maneColor = mColor
-    this.coatColor = cColor
+class BakedGood {
+  constructor(ingredients, time, ovenTemp=350){
+    this.ingredients = ingredients
+    this.time = time
+    this.ovenTemp = ovenTemp
   }
-  giddyUp(){
-    if(this.running)
+  startBaking(){
+    console.log("Follow the recipe and put the ingredientstogether in the right order before baking them");
   }
 }
+
+class Cookie extends BakedGood {
+  constructor(ingredients, time, ovenTemp){
+    super(ingredients, time, ovenTemp)
+    this.isTastyRaw = true
+  }
+}
+
+var choclatechipCookies = new Cookie(["brown sugar", "eggs", "flour", "choclate chips", "salt", "butter","vanilla", "baking soda"], "1.5 hours", 375)
