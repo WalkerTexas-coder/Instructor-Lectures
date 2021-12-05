@@ -44,121 +44,122 @@ console.log(arrayRhyme[7]);
 console.log(arrayRhyme[8]);
 console.log(arrayRhyme[9]);
 
-// //____________________________________________________________
-//
-// // MUTATORS - push()
-//
-// // Let's use the method push to push two new values into the end of our array
-// var myColors = ["red", "green", "blue"]
-// var students = ["Galadoe", "Marcelo", "Todd"]
-// students.push("Laurlyn", "Alfonso")
-// console.log(students)
-// myColors.push("black", "teal")
-// console.log(myColors)
-// console.log(myColors.length)
-// //____________________________________________________________
-//
-// // MUTATORS- .pop()
-// // Removes the last value in an array
-// // Notice how this method does not take an argument!
-// students.pop()
-// console.log(students);
-// myColors.pop()
-// // Console log it! Teal is gone.
-// console.log(myColors)
-// //____________________________________________________________
-//
-// // MUTATORS- .shift()
-// // Removes the value at the zeroth index of the array
-// students.shift()
-// console.log(students);
-// // Notice again how this method does not take an argument!
-// myColors.shift()
-// // Console log it. Red is gone AND teal is also not there because this method is a mutator!
-// console.log(myColors)
-// //____________________________________________________________
-//
-// // MUTATORS- .unshift(value)
-// // Adds a value to the beginning of an array
-// // This method does take an argument
-// students.unshift("Chris")
-// console.log(students)
-// myColors.unshift("magenta")
-// console.log(myColors)
-//
-// //____________________________________________________________
-//
-//
-// // MUTATORS- .reverse()
-// // Reverses the order of the values in an array
-// // Notice again how this method does not take an argument!
-// students.reverse()
-// console.log(students)
-// myColors.reverse()
-// console.log(myColors)
-// //____________________________________________________________
-//
-// // ACCESORS .indexOf()
-// // Returns the index of the first instance of a given value
-// console.log(myColors.indexOf("blue"))
-// console.log(students.indexOf("Chris"))
-//
-// //____________________________________________________________
-//
-// // ACCESORS join("")
-// // Converts all values in an array to a string
-// var myName = ["p", "r", "i", "s", "c", "i", "l","a"]
-// console.log(myName.join("     "))
-//
-// //____________________________________________________________
-//
-// // ACCESORS- .concat()
-// // Let's start by declaring two variables
-// // Merges two or more arrays to form one combined array
-// var letters1 = ["m", "o", "n"]
-// var letters2 = ["d", "a", "y"]
-//
-// console.log(letters1.concat(letters2))
-//
-// //____________________________________________________________
-//
-// // Strings to Arrays
-// var learnStudents = "Yanxu Milton Chris Trey"
-//
-// console.log(learnStudents.split());
-// console.log(learnStudents.split(""));
-// console.log(learnStudents.split(" "));
-// console.log(learnStudents.split("a"));
-//
-// var splitNames = learnStudents.split(" ")
-// console.log(splitNames);
-// console.log(learnStudents);
-// //____________________________________________________________
-// // And Back to strings
-// var learnStudents = ["Yanxu", "Milton", "Chris M", "Trey"]
-//
-// console.log(learnStudents.join());
-// console.log(learnStudents.join(""));
-// console.log(learnStudents.join(" "));
-// console.log(learnStudents.join("-"));
-//
-// var joinedNames = learnStudents.join(" ")
-// console.log(joinedNames);
-//
-// console.log(learnStudents);
-// //____________________________________________________________
-//
-// // Array Destructuring
-//
-// var [month, day, time] = ["May", "Wedneday", "2:30 PM"]
-//
-// console.log(month)
-// //____________________________________________________________
-//
-//
-// var [firstName, lastName] = ["Bruce", "Wayne"]
-//
-// console.log(firstName)
-//
-//
-// console.log(lastName)
+//____________________________________________________________
+
+// MUTATORS - push()
+
+// Let's use the method push to push two new values into the end of our array
+var myColors = ["red", "green", "blue"]
+var students = ["Galadoe", "Marcelo", "Todd"]
+students.push("Laurlyn", "Alfonso")
+console.log(students)
+myColors.push("black", "teal")
+console.log(myColors)
+console.log(myColors.length)
+
+//____________________________________________________________
+
+// MUTATORS- .pop()
+// Removes the last value in an array
+// Notice how this method does not take an argument!
+students.pop()
+console.log(students);
+myColors.pop()
+// Console log it! Teal is gone.
+console.log(myColors)
+//____________________________________________________________
+
+// MUTATORS- .shift()
+// Removes the value at the zeroth index of the array
+students.shift()
+console.log(students);
+// Notice again how this method does not take an argument!
+myColors.shift()
+// Console log it. Red is gone AND teal is also not there because this method is a mutator!
+console.log(myColors)
+//____________________________________________________________
+
+// MUTATORS- .unshift(value)
+// Adds a value to the beginning of an array
+// This method does take an argument
+students.unshift("Chris")
+console.log(students)
+myColors.unshift("magenta")
+console.log(myColors)
+
+//____________________________________________________________
+
+
+// MUTATORS- .reverse()
+// Reverses the order of the values in an array
+// Notice again how this method does not take an argument!
+students.reverse()
+console.log(students)
+myColors.reverse()
+console.log(myColors)
+//____________________________________________________________
+
+// ACCESORS .indexOf()
+// Returns the index of the first instance of a given value
+console.log(myColors.indexOf("blue"))
+console.log(students.indexOf("Chris"))
+
+//____________________________________________________________
+
+// ACCESORS join("")
+// Converts all values in an array to a string
+var myName = ["p", "r", "i", "s", "c", "i", "l","a"]
+console.log(myName.join("     "))
+
+//____________________________________________________________
+
+// ACCESORS- .concat()
+// Let's start by declaring two variables
+// Merges two or more arrays to form one combined array
+var letters1 = ["m", "o", "n"]
+var letters2 = ["d", "a", "y"]
+
+console.log(letters1.concat(letters2))
+
+//____________________________________________________________
+
+// Strings to Arrays
+var learnStudents = "Yanxu Milton Chris Trey"
+
+console.log(learnStudents.split());
+console.log(learnStudents.split(""));
+console.log(learnStudents.split(" "));
+console.log(learnStudents.split("a"));
+
+var splitNames = learnStudents.split(" ")
+console.log(splitNames);
+console.log(learnStudents);
+//____________________________________________________________
+// And Back to strings
+var learnStudents = ["Yanxu", "Milton", "Chris M", "Trey"]
+
+console.log(learnStudents.join());
+console.log(learnStudents.join(""));
+console.log(learnStudents.join(" "));
+console.log(learnStudents.join("-"));
+
+var joinedNames = learnStudents.join(" ")
+console.log(joinedNames);
+
+console.log(learnStudents);
+//____________________________________________________________
+
+// Array Destructuring
+
+var [month, day, time] = ["May", "Wedneday", "2:30 PM"]
+
+console.log(month)
+//____________________________________________________________
+
+
+var [firstName, lastName] = ["Bruce", "Wayne"]
+
+console.log(firstName)
+
+
+console.log(lastName)

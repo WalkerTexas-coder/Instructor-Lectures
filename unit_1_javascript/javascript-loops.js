@@ -15,7 +15,6 @@
 // global scope: variables called in the code base outside of functions,
 // generally const and var
 
-
 // Every for loop starts with --for--
 // Inside of the parenthesis we are going to give it three things
 // for(starting point, when to stop, how to run)
@@ -39,12 +38,12 @@
 //____________________________________________________________
 
 
-for(let  index = 0; index < 10; index +1){
+for(let index = 0; index < 10; index +1){
   console.log(index);
 }
 
 //____________________________________________________________
-
+// A for loop takes three arguments seperated by semicolons ;
 
 for(let i = 10; i > 0; i--){
   console.log(i)
@@ -74,7 +73,9 @@ var randomNums = [3,4,5,6,7,8]
 for(let i=0; i < randomNums.length; i++){
   if(randomNums[i] % 2 !== 0){
     console.log(randomNums[i])
-  }
+  } else {
+     console.log("the number is even");
+   }
 }
 //____________________________________________________________
 
@@ -145,13 +146,15 @@ for(let i=0; i<someMoreNumbers.length; i++) {
 //____________________________________________________________
 
 
-const lmfao = (num) => {
+
   for (let index = 0; index < num; index++) {
-    console.log("shots");
+    console.log("SHOTS");
   }
-  return "EVERBODY"
-}
-console.log(lmfao(6));
+  console.log("Everybody");
+
+
+
+
 
 var arrayNums = [0,1,2,3,4,5,77,556,665,667]
 
