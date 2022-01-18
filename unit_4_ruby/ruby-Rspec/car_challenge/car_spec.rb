@@ -6,7 +6,7 @@ require_relative 'car'
 
     # TALK ABOUT RUBY GEMS 
 
-    # a tool designed to easily manage the installation of gems, and a server for distributing them. according to eric hodl it was created during RubyConf 2004 on pi day 3/14. Gems have been a part of ruby ever since and if you want you wcan make your own gem the guide for which can be found at guides.rubygems.org
+    # a tool designed to easily manage the installation of gems, and a server for distributing them. It was created during RubyConf 2004 on pi day 3/14. Gems have been a part of ruby ever since and if you want you wcan make your own gem the guide for which can be found at guides.rubygems.org
 
     #  $ gem install rspec
 
@@ -20,8 +20,8 @@ require_relative 'car'
     # you name the test "something" just like you were instructed
     # and run the test... GREEN
 
-
     # _____________________________________________
+# ARRANGE ACT ASSERT 
     
     # Arrange inputs and targets. Arrange steps should set up the test case. Does the test require any objects or special settings? Does it need to prep a database? Does it need to log into a web app? Handle all of these operations at the start of the test.
 
@@ -74,7 +74,7 @@ describe 'Car' do
         expect(my_car.speed).to be 0
         expect(my_car.speed).to be_a Numeric
     end
-    
+
 
     it 'can accelerate by an amount' do
         my_car = Car.new 

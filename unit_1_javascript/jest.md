@@ -1,5 +1,5 @@
 # Set up
-    $ cd into javascript-challenges
+    $ cd into javascript-foundation- challenges
     $ git status
     $ git checkout -b new-branch-name
     $ mkdir testing-a-s
@@ -19,6 +19,8 @@ The philosophy and practice of safely creating code. Different styles of testing
  - End to End
 
 
+# Philosophy 
+ - Why and What
 ## Red Green Refactor
  1. Writing our test and running it
     - Figuring out our desired output

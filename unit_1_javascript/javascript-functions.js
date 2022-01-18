@@ -2,7 +2,8 @@
 
 
 // Functions - reusable, functions produce an output
-// Functions should be neutral
+// Functions - should be neutral 
+// Functions - should be dynamic 
 
 // Encapsulation - code should only have access to information that the developer decides, predictable behavior
 
@@ -21,15 +22,17 @@
 // 6) curly brackets, code block --> {}
 // 7) return, keyword in JavaScript, indicate the output --> return
 
-    // const pseudoFunction = (parameter) => {
+    // const pseudoFunction = 
+    
+    // (parameter) => {
     //     <executable code>
     //     return <final result>
     // }
 
 // Basic function:
-// const makeDonut = () => {
-//   return "Donut is made"
-// }
+const makeDonut = () => {
+  return "Donut is made"
+}
 
 // // call/invoke the function
 // // without the return keyword it will output undefined
@@ -37,17 +40,26 @@
 
 
 // // Function with an input:
-// // Parameter - function input
-// const makeDonut = (doughType) => {
-//   return `A ${doughType} donut is made`
-// }
+// // Parameter - function input // a local variable
+
+//                 parameter
+//                    v
+const makeDonut = (doughType) => {
+//           parameter
+//               v
+  return `A ${doughType} donut is made`;
+}
 
 // // Pass info into the function call - passing an argument
-// console.log(makeDonut("plain"))
-// console.log(makeDonut("blueberry"))
-// console.log(makeDonut("chocolate"))
-// console.log(makeDonut("espresso"))
-// console.log(makeDonut())
+//           functionName(argument)
+
+//                  argument
+//                      v
+console.log(makeDonut("plain"))
+console.log(makeDonut("blueberry"))
+console.log(makeDonut("chocolate"))
+console.log(makeDonut("espresso"))
+console.log(makeDonut())
 
 
 // Donut maker function will take the type of coffee and a number of donuts and will tell you a price

@@ -2,9 +2,10 @@
 ### Alright in this talk we have a lot of moving parts and they all need to work in harmony for our goals to be accomplished. By the end of the day y'all will be maestro's 
 
 Today were gonna be dealing with three major parts we need to keep track of our
-1. Routes
-2. Views
-3. Controllers
+1. Views - What can be seen by our user 
+2. Routes - How our user gets somewhere where they can see something
+3. Controllers - What our user will end up seeing or doing with what they see
+4. Params - How our user can see different things and interact with different things
 
 In the past we've made SPA's -- Single page app's good interview vocab word -- you can navigate to the site and do everything without linking to another page. Today we are going to make multi page websites. 
 
@@ -16,10 +17,26 @@ As always we are going ot need a to make a rails app
     $ rails db:create
 
     $ rails g controller Food
-    
-    $ rails s
 ```
+- The Rails controller is the logical center of your application. It coordinates the interaction between the user, the views, and the model.
+        
+      create  app/controllers/food_controller.rb
+      invoke  erb
+      create    app/views/food
+      invoke  helper
+      create    app/helpers/food_helper.rb
+      invoke  assets
+      invoke    scss
+      create      app/assets/stylesheets/food.scss
+      
+### Review the files
+ $ code .
 
+Let's keep a tidy application - for today I am going to delete the scss file and the helper file as I won't be needing them
+
+ > delete app/assets/stylesheets/food.scss
+ > delete app/helpers/food_helper.rb
+ 
 # Overview
 - Understanding the basics of creating a request response cycle in Rails
 

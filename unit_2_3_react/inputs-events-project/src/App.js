@@ -16,26 +16,28 @@ class App extends Component {
 
   render(){
     console.log(this.state.userInput)
+    // destructering userInput from the state object
+    const { userInput } = this.state
   return (
     <>
       <h1>Hello World</h1>
       <input 
         type="text"
-        //we could have an input witha value of something like" hey check out this input" But then it woudl be useless
+        //we could have an input with a value of something like" hey check out this input" But then it woudl be useless
         // Instead what we should do is have our input represent what data we are keeping track of for our user
-        value={this.state.userInput}
+        value={userInput}
         //the way we take in data and store i is an atrribute often called onChange which listens for any changes and does something with them-- anything we want. 
         onChange={this.handleChange}
       />
       
 
 
-      <p>{this.state.userInput}</p>
+      <p>{userInput}</p>
 
-      <h1>{this.state.userInput.split("")}</h1>
+      <h1>{userInput.split("")}</h1>
       
         
-      <h1>{this.state.userInput.length}</h1>
+      <h1>{userInput.length}</h1>
       
     </>
   );

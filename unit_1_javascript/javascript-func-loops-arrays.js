@@ -1,7 +1,5 @@
 // Functions, Loops, Arrays 9/14/2021
 
-var myArrayOfNums = [2, 3, 4, 5, 6];
-
 // Iteration - process or action that repeats until a condition is met
 
 // Function - reusable
@@ -9,21 +7,25 @@ var myArrayOfNums = [2, 3, 4, 5, 6];
 // Multiply each number by 5
 // Output - array of numbers that have been mult by 5
 
-// This didn't work: NaN
+// var numsArray = [2, 3, 4, 5, 6];
+
+// // This didn't work: NaN
 // const mult5 = (array) => {
 //   return array * 5
 // }
 
-// const mult5 = (array) => {
-//   let numbersMultBy5 = []
-//   for(let i=0; i<array.length; i++){
-//     numbersMultBy5.push(array[i] * 5)
-//     console.log(numbersMultBy5)
-//   }
-//   return numbersMultBy5
-// }
-// console.log(mult5(myArrayOfNums))
-// console.log(mult5([2, 3, 4]))
+const mult5 = (array) => {
+  let numbersMultBy5 = []
+  for(let i=0; i<array.length; i++){
+    numbersMultBy5.push(array[i] * 5)
+    console.log(numbersMultBy5)
+  }
+  return numbersMultBy5
+}
+console.log(mult5(myArrayOfNums))
+console.log(mult5([2, 3, 4]))
+
+
 
 var coffeeOrders = [
   "black coffee",
@@ -50,7 +52,7 @@ console.log(beverageOrder(coffeeOrders));
 // Randomizes checkin/checkout roster and accounting for instructors and previously late students
 
 var instructor = ["Austin", "Sarah"]; // does not randomize instructors
-var late = []; // add previously late student(s) to be "randomly" chosen to go first, verify spelling is consistent
+var late = ["Kevin"]; // add previously late student(s) to be "randomly" chosen to go first, verify spelling is consistent
 
 // student names in no particular order
 var cohortStudents = [
@@ -81,11 +83,16 @@ var cohortStudents = [
 // randomizes cohortStudents array
 const randomizeArray = (array) => {
   for (let i = 0; i < array.length; i++) {
+    //each student as set by the current poistion - establishing a level of abstraction between them.
     let student = array[i];
+    // random number holder
     let randomIndex = Math.floor(Math.random() * array.length);
+    // reset the current poistion to a random student
     array[i] = array[randomIndex];
+    // set that random student to the current student 
     array[randomIndex] = student;
   }
+    //give us back a the new shuffled array
   return array;
 };
 

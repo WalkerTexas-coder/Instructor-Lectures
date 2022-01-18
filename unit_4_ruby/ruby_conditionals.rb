@@ -1,42 +1,91 @@
-# Conditionals in Ruby use the keywords if else and end. Simple evaluations in Ruby don't need to be wrapped in () and our code blocks don't have {} so indentation and line managment is super important. Just like JavaScript the else block is a catch all and does not take an evaluation.
+# Ruby Conditionals Notes updated Jan 6th, 2022
 
-my_num = 10
-if my_num == 10
-  puts 'Your number is 10!'
+#Running Ruby in terminal
+# In terminal $ ruby file-name.rb
+# puts 'hello world'
+# Comments in Ruby - same shortcut command + /
+
+# print 'Hello World'
+# print 'Hello World'
+# print 'Hello World'
+
+# p 'Hello World'
+# p 'Hello World'
+# p 'Hello World'
+
+# puts 'Hello World'
+# puts 'Hello World'
+# puts 'Hello World'
+
+
+
+num = 101
+
+# if num > 100
+#   p '#{num} is greater than 100'
+# end
+
+# if num > 100
+#   p '#{num} is greater than 100'
+# else
+#   p '#{num} is less than 100'
+# end
+
+# if num > 100
+#   p '#{num} is greater than 100'
+# elsif num == 100
+#   p 'The number is 100'
+# else
+#   p '#{num} is less than 100'
+# end
+
+
+# if/elsif/else/end
+
+# Error messages - ruby-conditionals.rb:34: syntax error, unexpected end-of-input, expecting `end'
+
+# Missing an end
+
+
+
+
+# If you want your head to really spin ... Ruby also offers "unless" as a way to make conditional statements. "Unless" is just like if !(...). It's a conditional statement that executes only if the condition is false instead of true.
+
+my_num = 21
+unless my_num.even?
+    puts "#{my_num} is not even"
+ else
+    puts "#{my_num} is even"
+ end
+
+# Input in the terminal
+
+# GETS
+# gets - collects info from the user in the terminal
+# can save that info as a variable
+# Add a label:
+# p 'Enter you name:'
+# name = gets
+# p name
+
+# DOT CHOMP
+# .chomp removes any non-string characters like line breaks
+
+# A gets will always return a string
+# p 'Enter you name:'
+# name = gets.chomp
+# p "hey there, #{name}"
+
+
+# p "Hello, #{name}"
+
+p 'Enter yes or no:'
+answer = gets.chomp
+
+if answer.downcase == 'yes' || answer.downcase == 'y'
+  p 'You chose yes.'
+elsif answer.downcase == 'no'
+  p 'You chose no.'
 else
-  puts 'Your number is not 10.'
+  p "You rebel, you said: #{answer}"
 end
-
-# The puts (short for “put string”) and print commands are both used to display the results of evaluating Ruby code. The primary difference between them is that puts adds a newline after executing, and print does not.
-
-# If/Elsif/Else/End
-# To add additional evaluations to an if/else code block, Ruby offers the keyword elsif. After the if statement you may use as many elsif statements as you want. Ending with an else will capture all the leftover possibilities.
-
-my_num = 20
-if my_num == 10
-  puts 'Your number is 10!'
-elsif my_num < 10
-  puts "#{my_num} is less than 10."
-elsif my_num > 10
-  puts "#{my_num} is greater than 10."
-else
-  puts 'Something went wrong.'
-end
-
-# Unless
-# Ruby also offers unless as a way to make conditional statements. Unless is just like if !(...). It is just like an if in reverse. It's a conditional statement that executes only if the condition is false instead of true. 
-
-# I like to think of it as "Do this unless ..."
-
-my_num = 10
-unless my_num > 20
-  puts "#{my_num} is not greater than 20."
-else
-  puts "#{my_num} is greater than 20."
-end
-
-# Wrap Up
-    # string interporlation #{}
-    # if/elsif/else
-    # unless
-    # puts

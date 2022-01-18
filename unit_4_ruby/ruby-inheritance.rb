@@ -1,15 +1,15 @@
 # Class in ruby 
     # super()
-    
+     # The super() method is used in the child class. It calls the method of the same name in the parent class. After invoking super(), the child class will have access to the instance variables within that method.
 # _______________________________________________________________________________________
 # So when were making a superclass we are going to want to pass in information that we want every child of the class to have in common. 
-class OrderApp
-    attr_accessor :shop, :user, :order
+class App
+    attr_accessor 
     
-    def initialize(shop, user, order)
-        @shop = shop
-        @user = user
-        @order = order
+    def initialize(x, y, z)
+        @shop = x
+        @user = y
+        @order = z
         @date = Time.now
     end
 
@@ -19,26 +19,23 @@ class OrderApp
     end
 end
 
-# t_shirt = Orderer.new('Donut Tees', 'Austin', '20 yellow striped on black, Donut Tee Shirts' )
-
-# t_shirt.get_order
-
 
 # _______________________________________________________________________________________
 
-class TshirtOrderApp < OrderApp
+
+
+class ChildAppOne < App
     attr_accessor :shop, :user, :order, :number, :style
     def initialize (shop, user, order, style, number=1)
         super(shop, user, order)
         # The super() method is used in the child class. It calls the method of the same name in the parent class. After invoking super(), the child class will have access to the instance variables within that method.
-        @number_of_shirts = number
-        @t_shirt_style = style
-
+        @number_of_items = number
+        @item_style = style
     end
 
-    def get_tshirt_order_info
+    def get_info
         if @number > 200
-            "You have exceeded the limit of shirts that can be purchased at this time"
+            "You have exceeded the limit of items that can be purchased at this time"
         else
             "An order for #{@number_of_shirts} #{@t_shirt_style} shirts for user #{@user} from #{@shop} shop on #{@date}"
         end
@@ -57,6 +54,8 @@ p donut_shirts
 # puts order_array
 # p order_array
 
+
+# Because of the way this code behaves, you may be tempted to say that the instance variables are also inherited. But remember, that is not how Ruby works. In the above code, Pointer defines an initialize method that chains to the initialize method of its superclass. The chained method assigns values to the variable @breed, which makes those variables come into existence for a particular instance of Pointer.
 # _______________________________________________________________________________________
 
 class FoodOrderApp < OrderApp
