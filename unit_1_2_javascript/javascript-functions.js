@@ -1,12 +1,6 @@
 // Javascript Functions 12/6/21
 
 
-// Functions - reusable, functions produce an output
-// Functions - should be neutral 
-// Functions - should be dynamic 
-
-// Encapsulation - code should only have access to information that the developer decides, predictable behavior
-
 
 // Anatomy of a function
     // es5 function nameOfFunction(parameter){}
@@ -112,3 +106,9 @@ console.log(makeDonut("mocha", 300))
 // - parameter - placeholder variable
 // - argument - passed into the function call
 // - call/invoke - triggering the function to run
+// Functions - reusable, functions produce an output
+// Functions - should be neutral 
+// Functions - should be dynamic 
+
+// Encapsulation - code should only have access to information that the developer decides, predictable behavior
+// Functions should only have data that have been passed into the code via the argument 

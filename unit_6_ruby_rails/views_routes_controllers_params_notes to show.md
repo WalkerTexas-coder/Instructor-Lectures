@@ -3,22 +3,7 @@
 1. Views
 2. Routes
 3. Controllers
-4. Params - 
-
-# Terminal commands in order
-```
-$ rails new food_app -d postgresql -T -G
-$ rails db:create
-$ rails g controller Food
-$ rails s
-```
-
-### HTTP Verbs
-- Post 
-- Get
-- Put
-- Patch
-- Delete
+4. Params 
 
 # Overview
 - Understanding the anatomy of a Rails route
@@ -32,6 +17,24 @@ $ rails s
 
 - Creating Views
     - linking the views to the controller
+
+- Passing Params into the url and having them show up on the screen
+
+
+# Terminal commands in order
+```
+$ rails new food_app -d postgresql -T -G
+$ rails db:create
+$ rails g controller Food
+$ rails s
+```
+
+### HTTP Verbs 
+- Post 
+- Get
+- Put
+- Patch
+- Delete
 
 # The Controller
 Takes class methods with a specific  naming convention. 
@@ -57,35 +60,35 @@ Takes class methods with a specific  naming convention.
   http_verb '/tacos' => 'food#tacos'
 ```
 
-# Recap #1 
+# Overview #1
 - made an app
 - created a db
 - generated a controller
 - set up our controller
-    - methods
-    - render keyword
+- methods
+- render keyword
 - setup our routes
-    - using HTTP verbs 
-    - route in single quotes
-    - hash rocket
-    - name of controller
-    - and #
-    - name of method 
+- using HTTP verbs 
+- route in single quotes
+- hash rocket
+- name of controller
+- and #
+- name of method 
 
 # The View
 
 The generate command has created a folder/ directory in our app/views named after the name of our controller
-```
-...app/views/food
 
-```
+app/views/food
+
 in here we are going to make a new file with the extension "html.erb"
-```
-...app/views/food/method_name.html.erb
 
-...app/views/food/tacos.html.erb
+> app/views/food/method_name.html.erb
 
-```
+> app/views/food/tacos.html.erb
+
+erb stands for "Embedded RuBy". A .html.erb or .erb.html file is HTML with Ruby code embedded in; Rails will evaluate the Ruby to add content to the file dynamically, and will output a "pure" HTML file for rendering.
+
 ## ERB tag
 this one does not show up
 ```ruby
@@ -141,42 +144,44 @@ app/views/ControllerName/method_name.html.erb
 7. controller, view, routes sync'd up
 8. Set up instance variables in the controller that we can call on in the views
 9. linked our views together
-
+10. mapped over an array variable and displayed its contents
 
 
 Started with hard coded string
 ```ruby
-def christmas
-  @christmas_sweater = 'Christmas sweater with extra sparkles'
+def random_food
+  @random_food = 'random_food with extra sparkles'
 end
 ```
 
 Refactor to Using Params:
 ```ruby
-def christmas
-  @christmas_sweater = params[:style]
+def random_food
+  @random_food = params[:style]
 end
+
 ```
+> get '/random_food' => 'food#random_food'
 Parameter query: we can change the value of the param `:style`
-url: http://localhost:3000/christmas?style=ugly_sweater
+url: http://localhost:3000/random_food?style=bananasfoster
 
 
   Refactor to Ensure We Get Params:
 ```ruby
 Rails.application.routes.draw do
-  get '/christmas/:style' => 'sweater#christmas'
+  get '/random_food/:style' => 'food#random_food'
 end
 ```
-url: http://localhost:3000/christmas/ugly
+url: http://localhost:3000/random_food/foster
 
 Param hash in console:
-Parameters: {"style"=>"ugly"}
+Parameters: {"style"=>"foster"}
 
 
 ### Number of Sweaters
 ```ruby
 def quantity
-  @christmas_sweater_quantity = params[:number]
+  @random_food_sweater_quantity = params[:number]
 end
 url: http://localhost:3000/quantity/8
 ```
@@ -185,18 +190,34 @@ Params are always the data type string
 
 
 ```ruby
-def quantity
-  @christmas_sweater_quantity = params[:number]
-  if @christmas_sweater_quantity > 10
-    @output = 'a drawerful'
+def order
+  @food_order_quantity = params[:number]
+  if @food_order_quantity > 100
+    @output = 'a ton of food'
   else
-    @output = @christmas_sweater_quantity
+    @output = @food_order_quantity
   end
 end
-<h3>I have <%= @output %> christmas sweaters.</h3>
+<h3>I have <%= @output %> orders.</h3>
 ```
-
 
 Parameters: {"sweaters"=>"snowman", "hoodies"=>"roudolph", "mittens"=>"snowflake"}
 
 # Overview 3
+So to recap so far we have
+1. made an app
+2. created a db
+3. generated a controller
+4. set up our controller
+5. set up some routes
+6. bounced back and fourth a bit making methods and routes
+7. rooted one of our routes
+8. made a couple of views
+9. mapped our controller to our views
+10. we set up instance variables in our methods that our views can call on
+11. we linked our views together
+12. we set up params to define a variable and display it
+13. we did some logic with our params 
+    13.a remebering that params are always come to us as a string
+14. we can create multiple params by listing them all out in our routes and controllers
+15. we create params which are keys to a hash and the value of the key value pair comes from the URL

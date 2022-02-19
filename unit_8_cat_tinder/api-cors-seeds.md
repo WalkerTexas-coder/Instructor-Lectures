@@ -2,6 +2,8 @@
 ```
 $ rails new cat_tinder_backend_instructors -d postgresql -T 
 $ cd cat_tinder_backend
+$ git add remote ...
+$ git checkout -b main
 $ rails db:create
 $ bundle add rspec-rails
 $ rails generate rspec:install

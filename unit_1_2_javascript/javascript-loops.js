@@ -52,8 +52,8 @@ for(let i = 10; i > 0; i--){
 //____________________________________________________________
 
 //                 i
-//                 0         1         2      3       4      5       6      7      8      9
-var arrayRhyme = ["enie", "meanie", "minie", "mo", "catch", "a", "tiger", "by", "its", "toe"]
+//                 0         1        2      3         4        5      6      7         8         9
+var arrayRhyme = ["ring", "around", "the", "rosie", "pocket", "full", "of", "posie", "ashes", "ashes"]
 
  for (let index = 0; index < arrayRhyme.length; index++) {
     console.log(arrayRhyme[index]);
