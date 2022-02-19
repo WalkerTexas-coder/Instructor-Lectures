@@ -15,6 +15,7 @@
 // 5) arrow syntax, indicating a custom function --> =>
 // 6) curly brackets, code block --> {}
 // 7) return, keyword in JavaScript, indicate the output --> return
+      // Return is required for every function and without it we will get an undefined
 
     // const pseudoFunction = 
     
