@@ -12,105 +12,114 @@
 
 
 //          
-//          Coffee
+//          Animal
 //         /       \
-//  Drip Coffee    Espresso
-//                    \
-//                   Latte
-
-
+//      Reptile   Mammal
+//                  /  \
+//              Ursus   Marsupial
+//              /           \     \
+//         Polar Bear      quokka     kangaroo
 
 
 
 // So here we have our Parent class: a class that calls constructor and lays out he base levels of information and methods
-class Coffee {
-  constructor(coffeeOrigin) {
-    this.origin = coffeeOrigin;
-  }
-  info() {
-    return `This coffee is from ${this.origin}`;
-  }
-}
-
-let ethiopian = new Coffee("Ethiopia");
-console.log(ethiopian.info);
 
 // ____________________________________________
 
 
 // Child class : a class that will inheit from a parent class and define its own unique information and methods on top of it's parents
 // extends: is a javascript keyword that defines the relationship between the two classes. The child extends the parent
-class DripCoffee extends Coffee {
-  constructor(coffeeOrigin) {
-      super(coffeeOrigin);
-      //super - within in the constructor method we call super() which passes the attributes In this case the coffee origin from the constructor in the parent class. 
-    this.isFresh = true;
-  }
-  wait() {
-    this.isFresh = false;
-  }
-  drink() {
-    return this.isFresh ? 
-        `A fresh pot of ${this.origin} coffee` :
-        `An old warm pot of ${this.origin} coffee`;
-  }
-}
 
-let foldgers = new DripCoffee("foldgers");
-console.log(foldgers);
-console.log(foldgers.drink());
-foldgers.wait();
-console.log(foldgers.drink());
-
-
+    //super - within in the constructor method we call super() which passes the attributes In this case the coffee origin from the constructor in the parent class. 
 
 
 // ____________________________________________
 
 
+// Parent Class: the Generic version of a class that has all the data and behavior that is common to all child classes
+// Child Class: the specific version of the parent class that has features that other child classes do not. 
+// extends: the key word to class inheritance in javascript
+// super(): a method that calls upon the Parents constructor method and passess it arguments in the same order the super() recieved them. 
 
+//          Class relationship tree
+//                Animal
+//                  / \
+//            Mammal Reptile
 
-
-class Espresso extends Coffee {
-  constructor(coffeeOrigin, numberOfShots) {
-    super(coffeeOrigin);
-    this.shots = numberOfShots;
+class Animal {
+  constructor(nameParam) {
+    //    Data
+    //     v
+    this.name = nameParam
+    this.isAlive = true
+    this.age = 0
   }
-  espressoInfo() {
-    if (this.shots === 1) {
-      return `Your single shot ${this.origin} is ready`;
-    } else if (this.shots > 1) {
-      return `Your ${this.shots} of ${this.origin} is ready`;
+  //  Behavior
+  //    v
+  reproduce() {
+    return `Make a bunch of little ${this.name}'s`
+  }
+  accident() {
+    this.isAlive = false
+  }
+  birthday() {
+    this.age = this.age + 1
+  }
+}
+
+let frogThing = new Animal("Mudskipper")
+
+// console.log(frogThing)
+// frogThing.birthday()
+// console.log(frogThing)
+// console.log(frogThing.reproduce())
+
+
+//           New Key Word
+//              v
+class Reptile extends Animal {
+  constructor(nameParamInTheChild, venomousParam) {
+
+    //   New Key Word
+    //     v
+    super(nameParamInTheChild)
+    this.isVenomous = venomousParam
+  }
+  reptileInfo() {
+    return `Your Reptile's name is ${this.name}. ${this.name} is ${this.age} years old. Is ${this.name} venomous? ${this.isVenomous} `
+  }
+}
+
+let snek = new Reptile("Black Mamba", true)
+let shellPower = new Reptile("Snapping Turtle", false)
+
+// console.log(snek)
+// console.log(shellPower)
+// shellPower.birthday()
+// console.log("turtle after the birthday", shellPower)
+// console.log(shellPower.age) // <-- logging a key in an object to recieve the value
+// console.log(shellPower.reptileInfo())
+
+
+class Mammal extends Animal {
+  constructor(name, aquaticTypeParam, fuzzyParam = true) {
+    super(name)
+    this.isWarmBlooded = true
+    this.isFuzzy = fuzzyParam
+    this.isAquatic = aquaticTypeParam
+  }
+
+  movement() {
+    if (this.isAquatic === true) {
+      return "Just keep swimming"
     } else {
-      return "Sorry I didn't catch that: Did you want 1 or 2 shots?";
+      return "you should hop through some fields"
     }
   }
 }
 
-
-
-// ____________________________________________
-
-
-
-
-
-
-class Latte extends Espresso {
-  constructor(coffeeOrigin, numberOfShots, milkType) {
-    super(coffeeOrigin, numberOfShots);
-    this.milk = milkType;
-    this.isFoamy = false;
-  }
-  steamTheMilk() {
-    this.isFoamy = true;
-    return "pssssphhhhttt";
-  }
-  makeLatteArt() {
-    return this.isFoamy ? "Beautiful Latte Art" : "Please steam the milk first";
-  }
-}
-
-let petes = new Latte("colombia", 2, "nonfat");
-console.log(petes);
-console.log(petes.makeLatteArt());
+let theCutest = new Mammal("Quokka", false)
+console.log(theCutest)
+theCutest.birthday()
+console.log(theCutest.age)
+console.log(theCutest.name, theCutest.movement())

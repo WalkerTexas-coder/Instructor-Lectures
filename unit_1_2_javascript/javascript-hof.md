@@ -1,5 +1,11 @@
 // JavaScript Higher Order Functions 12/7/2021
 
+    Things I wish I did better last time: 
+    Pseudo code out ideas
+    Create flags for variables
+
+
+
 // Built in methods - code snippets, popular actions
 // Syntactical sugar - wrappers over code functionality that make the language sweeter
 >For example, many programming languages provide special syntax for referencing and updating array elements
@@ -33,6 +39,7 @@
 // Arrays - predictable, great for storing and accessing data
 
 // Higher-order functions - a subcategory of built in method that are called on arrays and used for iteration
+> HoF's are names as such because they are methods that take functions as one of their arguments. 
 
 // WAY MORE EFFICIENT THAN FOR LOOPS!
 
@@ -93,9 +100,9 @@ ________________________________________
 
 
 >So forEach works on an array by using dot notation and taking three arguments. The three arguments are what? 
-  > value - which access the data at each index
-  > index - which gives us the number of each index
-  > array - which lets us see the whole array for each item in the array
+  // value - which access the data at each index
+  // index - which gives us the number of each index
+  // array - which lets us see the whole array for each item in the array
 
 
 > There are two other HoF you need to know about and we will work with on a very regular basis.  
@@ -185,21 +192,21 @@ map always returns an array of the same length as the one you started with.
 // console.log(onlyNumbers)
 // --> [ 6, 4, 5, 1000, 5 ]
 
+    Didn't do these examples
+    // Create a function that takes in an array and returns an array of only numbers:
+    // const onlyNumbersFunction = (array) => {
+    //   return array.filter(value => {
+    //     return typeof value === "number"
+    //   })
+    // }
 
-// Create a function that takes in an array and returns an array of only numbers:
-// const onlyNumbersFunction = (array) => {
-//   return array.filter(value => {
-//     return typeof value === "number"
-//   })
-// }
 
-
-// Create a function that takes in an array and returns a specific data type as determined by the dev
-// const typeSelector = (array, type) => {
-//   return array.filter(value => {
-//     return typeof value === type
-//   })
-// }
+    // Create a function that takes in an array and returns a specific data type as determined by the dev
+    // const typeSelector = (array, type) => {
+    //   return array.filter(value => {
+    //     return typeof value === type
+    //   })
+    // }
 
 // prompt: create a function that takes in an array and returns the word 'odd' for every odd number
 // create function called gettingOdds (done)
