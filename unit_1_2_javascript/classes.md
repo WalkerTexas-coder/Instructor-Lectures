@@ -24,12 +24,12 @@ So let's start with the anatomy. We are going to build out a class that will mak
 
 First step is that we need to define our class. Just like functions and variables, classes have a declaration and a name. The declaration of a class is conveniently the word class. Next we need our name. The naming syntax for classes is different than we have seen before. It is a casing convention called PascalCase. This naming convention is true in many programming languages, not just JavaScript. Pascal case is similar to camel case but the first letter is also uppercase.
 
-class DoingMath {
+class SuperHero {
 }
 
 We have now defined a class. Just like an object, a class can have both static information or data and methods or behavior. So let's start with data. In our example we need some numbers, we need some static data. Classes have a special method that is used to establish data inside a class. That method is called the constructor.
 
-class DoingMath {
+class SuperHero {
   constructor(){
 
   }
@@ -37,24 +37,22 @@ class DoingMath {
 
 Inside the constructor we can establish our numbers. Our numbers will be variables that belong to the class. Sooooo, we need our old friend this.
 
-class DoingMath {
+class SuperHero {
   constructor(){
-    this.num1 = 5,
-    this.num2 = 10,
-    this.num3 = 15
+    this.name = "Spiderman"
+    this.origin = "Got bit by a spider and can now jump really good"
   }
 }
 
 Now we have three variables that belong to the class. So static data is done. Now let's add the method that will add up the numbers.
 
-class DoingMath {
+class SuperHero {
   constructor(){
-    this.num1 = 5,
-    this.num2 = 10,
-    this.num3 = 15
+    this.name = "Spiderman"
+    this.origin = "got bit by a spider and can now jump really good"
   }
-  addUp(){
-    return this.num1 + this.num2 + this.num3
+  storyTime(){
+    return this.name + ": a super hero who " + this.origin
   }
 }
 
@@ -71,24 +69,24 @@ Imagine a very cookie cutter neighborhood. All the houses are look pretty much t
 
 So here we are creating a new instance of our object. And we can look at it.
 
-console.log(new DoingMath)
+console.log(new SuperHero)
 
 Now if we run this code we see that we have created an object with key values pairs. Cool. So let's save this as a variable so that we can do stuff to do it.
 
-var math = new DoingMath
-console.log(math)
+var spidey  = new SuperHero
+console.log(spidey)
 
 So this of course gets us the same result. But now we can reference the variable and call our method.
 
-console.log(math.addUp())
+console.log(spidey.storytime())
 
 And we can create many different objects - or instances - from this class.
 
-var math1 = new DoingMath
-console.log(math1)
+var spiderGwen = new SuperHero
+console.log(spiderGwen)
 
-var math2 = new DoingMath
-console.log(math2)
+var spiderPig = new SuperHero
+console.log(spiderPig)
 
 These are all different variables that hold unique instances of this class.
 
@@ -100,65 +98,20 @@ We can remove the hard coded values and instead tell our class that we need some
 
 Now we are setting the expectation that every class that we create is going to have unique numbers. This brings us back to the constructor and its behavior. The constructor is a method that runs automatically when we create a new instance of a class. So we can pass it parameters. But if we pass it parameters we need to fill that space with actual values.
 
-class DoingMath {
-  constructor(num1, num2, num3){
-    this.num1 = num1,
-    this.num2 = num2,
-    this.num3 = num3
+class SuperHero {
+  constructor(nameParam, originParam){
+    this.name = nameParam
+    this.origin = originParam
   }
-  addUp(){
-    return this.num1 + this.num2 + this.num3
+  storyTime(){
+    return this.name + ": a super hero who " + this.origin
   }
 }
 
 And the place to do that is when we create a new object.
 
-var math = new DoingMath(5, 10, 15)
+var math = new SuperHero(5, 10, 15)
 console.log(math.addUp())
-
-
-What if we had a situation where the first number was always going to be 5. We could hard code that value and just pass in the other two.
-
-class DoingMath {
-  constructor(num2, num3){
-    this.num1 = 5
-    this.num2 = num2,
-    this.num3 = num3
-  }
-  addUp(){
-    return this.num1 + this.num2 + this.num3
-  }
-}
-
-var math = new DoingMath(5, 10)
-console.log(math.addUp())
-
-
-What if I also wanted to be able to return the largest number. (Google how to get Math.max)
-
-class DoingMath {
-  constructor(num2, num3){
-    this.num1 = 5
-    this.num2 = num2,
-    this.num3 = num3
-  }
-  addUp(){
-    return this.num1 + this.num2 + this.num3
-  }
-  largestNum(){
-    return Math.max(this.num1, this.num2, this.num3)
-  }
-}
-
-
-var math = new DoingMath(5, 10)
-console.log(math.addUp())
-console.log(math.largestNum())
-
-
-
-
-
 
 
 Review:

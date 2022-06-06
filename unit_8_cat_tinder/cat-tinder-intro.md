@@ -11,7 +11,7 @@ Talk Flow
 
 ## Trello
   - Kanban boards and agile development
-  - Kanban baords highlight two things
+  - Kanban boards highlight two things
     - time 
     - tasks
   - Generally kanban boards have something called swim lanes, Trello is no different

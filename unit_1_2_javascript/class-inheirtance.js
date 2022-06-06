@@ -1,5 +1,6 @@
 
 // Key Words:
+// instantiate / instance -In a computer system, any time a new context is created based on some model, it is said that the model has been instantiated. In practice, this instance usually has a data structure in common with other instances, but the values stored in the instances are separate. 
 // Parent Class
 // Child Class
 // extends

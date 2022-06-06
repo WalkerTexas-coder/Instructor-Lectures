@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import FlashCard from './components/FlashCard'
 import './App.css'
 
-export default class App extends Component {
+class App extends Component {
   //part one of our class is our constructor which holds our state object
   constructor(props){
     super(props)
@@ -36,8 +36,12 @@ export default class App extends Component {
             superman={this.state.animalsArray[this.state.randimal]}
             click={this.handleClick}
           />
-          
+          <FlashCard
+            superman={this.state.animalsArray[this.state.randimal]}
+            click={this.handleClick}
+          />
       </>
     );
   }
 }
+export default App

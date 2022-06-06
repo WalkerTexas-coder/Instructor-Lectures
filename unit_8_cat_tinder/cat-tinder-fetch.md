@@ -1,4 +1,5 @@
 RECAP: Where are we at? 
+
 We have a front end that has visualization and functionality of creating and potentially updating cats. This front end is built in react.
 We also have a back end complete with a database , endpoints and validations. Our api has full crud functionality. It's built in Rails. What we need to do today is connect these two pieces.
 

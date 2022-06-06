@@ -49,6 +49,7 @@ end
 p nums_array
 ```
 
+
 ### Blocks
 Since we are in Ruby land, it shouldn't surprise you to learn that Ruby has lots of built in methods for different types of iteration. And when we are using a method for iteration we need to pass the method some info.
 
@@ -58,12 +59,13 @@ This is very much like when you pass a function to the map or filter method in J
 
 Blocks can be defined two ways: using the key words do/end or with curly braces. Generally speaking, the do/end should be used if the block is more than one line of code. Curly braces are used for code that can be written in one line.
 
+
 ### Each
 The each method works on a list of items. So it needs an array order to run. It uses an array's length to determine the number of times it is going to run. By default, each starts at 0 and continues to the length of whatever it is acting on.
 ```ruby
 num_array = [2, 3, 4]
 num_array.each do
-  p 'yo'
+  p 'whats good'
 end
 ```
 To add a bit of functionality to this method we can pass in a local variable. Blocks can take in parameters. To pass a parameter to the block you use pipes.
@@ -89,6 +91,7 @@ num = [2, 3, 4]
 num.each {|value| p value * 3}
 ```
 You'll remember that in JavaScript methods are really specific to one data type. Reverse can only be called on arrays. Map can only be called on an array. However, Ruby isn't so picky. Typically we associate arrays with iteration and that is still true. But there are other things that can be iterated and so I want to take a side step here real fast and talk about one of those things.
+
 
 ### Ranges
 A range is an object which has a starting value and an ending value and creates a sequence that span between these values.
@@ -125,6 +128,9 @@ range.each do |value|
   end
 end
 ```
+
+
+
 **EXTRA**
 Can use a range to populate an array in a couple different ways:
 nums = [*1..9]
@@ -132,6 +138,8 @@ nums = Array(1..10)
 (1..5).to_a
 Need the parentheses otherwise you are basically calling .to_a on the last value
 **end**
+
+
 
 ### Map
 Let's talk about map. So each/do is great, but it really is a bit of a more primitive version of map. It returns all the elements but it doesn't collect them in any way.
@@ -182,7 +190,7 @@ def is_even array
 end
 p is_even num
 
-num = ['hey', 'yo', 'sup', 'hello']
+words = ['hey', 'yo', 'sup', 'hello', 'gang gang', 'gucci']
 def is_even array
   array.select do |value|
     value.include?('e')

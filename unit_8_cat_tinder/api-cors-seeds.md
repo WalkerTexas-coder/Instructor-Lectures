@@ -48,15 +48,15 @@ cats.each do |attributes|
 end
 ```
 
-$ rails db:seed
+ $ rails db:seed
 
 Each time we run rails db:seed we will end up adding the mock data to our data base. SO if we ran it three times we would have 3 of each cat in our database.
 
 ## Trouble Shooting
-$ rails db:drop
-$ rails db:create
-$ rails db:migrate
-$ rails db:seed
+ $ rails db:drop
+ $ rails db:create
+ $ rails db:migrate
+ $ rails db:seed
 
 # API CORS  
 

@@ -1,4 +1,17 @@
 # Class in ruby 
+#OOP 
+  # everything in ruby is an object
+  # so if everything in ruby is an object it has rules that dictate how those objects are made -- the instructions for how those onjects are made and what methods can be applied to them are their classess
+    $ irb
+    > [].class
+    > 42.class
+    > 0.42.class
+    > {key:'value'}.class
+    > {key:'value'}.class.class
+    > 42.class.class
+
+
+    classes are made up of nouns and 
     # super()
      # The super() method is used in the child class. It calls the method of the same name in the parent class. After invoking super(), the child class will have access to the instance variables within that method.
 # _______________________________________________________________________________________
@@ -7,9 +20,9 @@ class App
     attr_accessor 
     
     def initialize(x, y, z)
-        @shop = x
-        @user = y
-        @order = z
+        @x = x
+        @y = y
+        @z = z
         @date = Time.now
     end
 
@@ -55,7 +68,7 @@ p donut_shirts
 # p order_array
 
 
-# Because of the way this code behaves, you may be tempted to say that the instance variables are also inherited. But remember, that is not how Ruby works. In the above code, Pointer defines an initialize method that chains to the initialize method of its superclass. The chained method assigns values to the variable @breed, which makes those variables come into existence for a particular instance of Pointer.
+
 # _______________________________________________________________________________________
 
 class FoodOrderApp < OrderApp

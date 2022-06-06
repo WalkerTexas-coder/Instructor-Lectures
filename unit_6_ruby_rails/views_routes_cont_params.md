@@ -13,7 +13,7 @@ Today were gonna be dealing with One idea that comes to us in four parts. What d
 # Getting Started
 As always we are going ot need a to make a rails app
 ```
-    $ rails new food_app -d postgresql -T -G
+    $ rails new food_app -d postgresql -T
 
     $ rails db:create
 
@@ -94,7 +94,7 @@ This generate command makes a number of item for us but the two we need today ar
 
     - most days of the week mine is the economist.com
 
-    - This address for the econmist is a URL : Uniform Resource Locator. When I send a GET request to the server of the economist it sends me back a 200 code and some html to display
+    - This address for the economist is a URL : Uniform Resource Locater. When I send a GET request to the server of the economist it sends me back a 200 code and some html to display
 
     - A controller is handling this action fo giving me the 200 code and html
 
@@ -197,14 +197,14 @@ We need to bounce back over to our controller and tell our controller that these
 ```ruby
 ## add the render to controller 
     def tacos
-        render 'tacos.html.erb'
+       'tacos.html.erb'
     end
 ```
 ## We while we're here lets add an instance variable
 ```ruby
     def tacos
         @our_tacos = "ingredients: ..."
-        render 'tacos.html.erb'
+       'tacos.html.erb'
     end
 ```
 
@@ -309,7 +309,7 @@ url: http://localhost:3000//random_food?style=foster
   Refactor to Ensure We Get Params:
 ```ruby
 Rails.application.routes.draw do
-  get '/banana/:style' => 'sweater#christmas'
+  get '/banana/:style' => 'food#random_food'
 end
 ```
 url: http://localhost:3000/random_food/foster

@@ -1,10 +1,10 @@
 // This is why arrays are so useful! Instead of having multiple car variables, we can have one
 // varariable with holding multime elements, in this case cars, by using an array.
 
-var car1 = "Ford";
-var car2 = "Jeep";
-var car3 = "Hyundai";
-var cars = ["Ford", "Jeep", "Hyundai"];
+var car1 = "Ford";
+var car2 = "Jeep";
+var car3 = "Hyundai";
+var cars = ["Ford", "Jeep", "Hyundai"];
 
 //  VALUE
 // "Ford" is a value
@@ -31,8 +31,8 @@ console.log(cars);
 // so we can imagine an array looks like this
 
 //                 i
-//                 0         1         2      3       4      5       6      7      8      9
-var arrayRhyme = ["enie", "meanie", "minie", "mo", "catch", "a", "tiger", "by", "its", "toe"]
+//                 0         1         2      3       4          5       6      7            8    
+var streetNames = ["ash", "beech", "cedar", "date", "cherry", "hazel", "ivy", "chesnut", "Orange"]
 console.log(arrayRhyme[0]);
 console.log(arrayRhyme[1]);
 console.log(arrayRhyme[2]);
@@ -42,7 +42,7 @@ console.log(arrayRhyme[5]);
 console.log(arrayRhyme[6]);
 console.log(arrayRhyme[7]);
 console.log(arrayRhyme[8]);
-console.log(arrayRhyme[9]);
+
 
 //____________________________________________________________
 
