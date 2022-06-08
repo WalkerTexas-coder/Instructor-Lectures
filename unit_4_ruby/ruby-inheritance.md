@@ -1,7 +1,8 @@
-# Class in ruby 
+Class in ruby 
 #OOP 
-  # everything in ruby is an object
-  # so if everything in ruby is an object it has rules that dictate how those objects are made -- the instructions for how those onjects are made and what methods can be applied to them are their classess
+  everything in ruby is an object
+   so if everything in ruby is an object it has rules that dictate how those objects are made -- the instructions for how those onjects are made and what methods can be applied to them are their classess
+```Ruby
     $ irb
     > [].class
     > 42.class
@@ -9,15 +10,31 @@
     > {key:'value'}.class
     > {key:'value'}.class.class
     > 42.class.class
+```
+
+Every object-oriented developer should be well familiar with the so called Four Pillars OOP:
+
+Encapsulation - Removing access to parts of your code and making things private is exactly what Encapsulation is all about (often times, people refer to it as data hiding).
+  
+   
+Inheritance - Inheritance lets one object acquire the properties and methods of another object.
+Polymorphism -"the condition of occurring in several different forms."
+Abstraction - To abstract something away means to hide away the implementation details inside something – sometimes a prototype, sometimes a function. So when you call the function you dont have to understand exactly what it is doing.
+ - Describe making coffee
 
 
-    classes are made up of nouns and 
-    # super()
-     # The super() method is used in the child class. It calls the method of the same name in the parent class. After invoking super(), the child class will have access to the instance variables within that method.
+
+  Classes are made up of nouns and verbs 
+  Our nouns are the data that we want to save and we use to describe the world around us. 
+  The verbs describe how we get and set that data and specifically what we want to happen when we do. 
+
+  
+    
 # _______________________________________________________________________________________
-# So when were making a superclass we are going to want to pass in information that we want every child of the class to have in common. 
+ So when were making a superclass we are going to want to pass in information that we want every child of the class to have in common. 
+```Ruby
 class App
-    attr_accessor 
+    attr_accessor :x, :y, :z
     
     def initialize(x, y, z)
         @x = x
@@ -26,20 +43,22 @@ class App
         @date = Time.now
     end
 
-    def get_order
-    #    puts "#{@user}, has ordered #{@order} from #{@shop} on/at #{@date}"
-       @order_ticket = "#{@user}, has ordered #{@order} from #{@shop} on/at #{@date}"
+    def get_info
+       @info = "#{@x}, has ordered #{@y} from #{@z}"
     end
 end
-
+```
 
 # _______________________________________________________________________________________
 
 
-
+```Ruby
 class ChildAppOne < App
     attr_accessor :shop, :user, :order, :number, :style
+    
     def initialize (shop, user, order, style, number=1)
+      # super()
+        # The super() method is used in the child class. It calls the method of the same name in the parent class. After invoking super(), the child class will have access to the instance variables within that method.
         super(shop, user, order)
         # The super() method is used in the child class. It calls the method of the same name in the parent class. After invoking super(), the child class will have access to the instance variables within that method.
         @number_of_items = number
@@ -57,6 +76,7 @@ end
 
 donut_shirts = TshirtOrderer.new("Donut Media", "Austin", "RIP Pop Up & Down Headlights", 2)
 synthwave_shirt = TshirtOrderer.new("local shirt shop", "LEARN STUDENT", "Synthwave Japanese theme")
+
 # donut_shirts.get_tshirt_order_info
 p donut_shirts
 # order_array = []
@@ -67,9 +87,11 @@ p donut_shirts
 # puts order_array
 # p order_array
 
-
+```
 
 # _______________________________________________________________________________________
+
+```Ruby
 
 class FoodOrderApp < OrderApp
     attr_accessor :entree_one, :side_one, :drink_one, :entree_two, :side_two, :drink_two
@@ -104,3 +126,5 @@ jj.order_Number_one("NO.7, no mayo, add mustard", "Salt and vinegar Chips", "Cok
 jj.order_Number_two("NO.11", "BBQ chips", "Coke")
 jj.side_two = "Plain chips"
 jj.get_order_details
+
+```
