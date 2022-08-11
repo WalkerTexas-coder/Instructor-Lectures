@@ -16,11 +16,13 @@ The process looks like this
 5. Boom! Just like that we have a running app that I can update and hack around in
 
 I want to take you on a little tour of the app
+App Anatomy 
+
 - index.html
-- public
-- src
-- App.css
-- App.js
+- public/
+- src/
+- /App.css
+- /App.js
 
 Currently our App.js is a functional component. This is the new normal for react apps. Functional components are very simple as they are just a single function whose job is to return to us some JSX.
 
