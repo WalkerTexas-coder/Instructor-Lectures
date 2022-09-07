@@ -1,14 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class FlashCard extends Component {
-    render() {
-        return (
-            <>
-                <div onClick={this.props.click} id='card'>
-                    <h1>this is the flash card file </h1>
-                    <h1>{this.props.superman}</h1>
-                </div>
-            </>
-        )
-    }
+// nested components need a parameter of props
+const FlashCard = (props) => {
+
+  return (
+    <div onClick={props.handleClick}>
+      <p>This is a FlashCard</p>
+      {/* <h2 >{props.animals[props.randomIndex]}</h2> */}
+      <h2 >{props.animal}</h2>
+      {/* <h2>{props.index}</h2> */}
+    </div>
+
+  )
 }
+
+export default FlashCard

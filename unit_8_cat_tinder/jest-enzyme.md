@@ -14,7 +14,8 @@
 As described, we will use:
 -   Jest as the test runner, assertion library, and mocking library
 -   Enzyme to provide additional testing utilities and interaction with react elements
-1
+
+
 # Vocabulary
 Jest
 Enzyme

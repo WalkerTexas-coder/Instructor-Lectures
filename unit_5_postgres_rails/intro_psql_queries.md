@@ -17,19 +17,19 @@ What's the purpose of a class?
  - we don't eat the recipe book 
  - we create as much food as we want using the recipe 
 
-What we don with the code that our classes makes is where databases come in? 
+What we do with the code that our classes makes is where databases come in? 
 
 Can we set up a class that represents something that is complicated in a simplified way? 
 
   What about a learn student?
   Lets create a quick sheets document where we create some rows and collect some data about our learn students
    
-   first names | cohorts
+   first names | cohort code | year
    _______________________________
-    Austin     | Bravo 2020
-    Charlean   | Delta 2021
-    Student    | bravo 2022
-    Student    | bravo 2022
+    Austin     | Bravo       | 2020
+    Charlean   | Delta       | 2021
+    Student    | Bravo       | 2022
+    Student    | Bravo       | 2022
 
 This is the same representation as if I had written the code in ruby
 
@@ -166,6 +166,7 @@ LIMIT 5;
     WHERE governmentform
     IN ('Monarchy', 'Republic')
     ```
+
   ### Like
   - Like takes a new line 
   - Most helpful to use with strings
@@ -212,7 +213,6 @@ SELECT name, surfacearea, population,
 WHERE population != 0
 population/surfacearea as population_density
 FROM country
- 
 
 
 ## Group By

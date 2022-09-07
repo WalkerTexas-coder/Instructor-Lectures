@@ -1,7 +1,7 @@
 Create React App 12/15/21
 
 Yesterday we looked at react as a JavaScript component that allows for us as developers to instantiate classes as individual components and display them as many time as we like. 
-Each of these class components can be thought of as legos or building blocks that we can use to build robust websites. React is a lot more than just simple JavaScript components rendering HTML-- React has an entire eco system of libraries and modules that can be brought in from other developers. In fact Facebook built React with as little extra features as possible to encourage developers to create their own additions and modification to the platform. 
+Each of these components can be thought of as legos or building blocks that we can use to build robust websites. React is a lot more than just simple JavaScript components rendering HTML-- React has an entire eco system of libraries and modules that can be brought in from other developers. In fact Facebook built React with as little extra features as possible to encourage developers to create their own additions and modification to the platform. 
 
 So how do we gain access to all this wonderful magic made by computer wizards around the world? That where I am going to reintroduce you to yarn. Yarn or "Yet another resource negotiator" is a JavaScript package manager also built by Facebook that optimizes build and download times of the packages. 
 
@@ -26,7 +26,7 @@ App Anatomy
 
 Currently our App.js is a functional component. This is the new normal for react apps. Functional components are very simple as they are just a single function whose job is to return to us some JSX.
 
-We want our App.js to handle some more complex data management using OOP so we need to set up our App.js as a class component. 
+We want our App.js to handle some more complex data management using OOP so we need to set up our App.js as a  component. 
 
 ```javascript
 import React, { Component } from 'react'

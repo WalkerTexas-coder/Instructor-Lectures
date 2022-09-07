@@ -68,15 +68,16 @@ import in index.js
 
 
 ## React-Router-Dom
- - everything is showing up all at once and thatst not the goal
- - spa
- - running js in the brwoser
- - no request response cyccles like rails
- - thrid party package r-r-d
- - we want to take a moment and instal it to our project
+ - everything is showing up all at once and thats not the goal
+ ### SPA
+ 
+ - running js in the browser
+ - no request response cycles like rails
+ - third party package r-r-d
+ - we want to take a moment and install it to our project
 
 `$ yarn add react-router-dom@5.3.0`
- - with thatt we cna checkout out the package json again and see that it has been updated with r-r-d
+ - with that we cna checkout out the package json again and see that it has been updated with r-r-d
 
 ## Mock Data
 

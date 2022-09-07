@@ -1,5 +1,7 @@
 Class in ruby 
+
 #OOP 
+  OOP is 
   everything in ruby is an object
    so if everything in ruby is an object it has rules that dictate how those objects are made -- the instructions for how those onjects are made and what methods can be applied to them are their classess
 ```Ruby
@@ -14,12 +16,14 @@ Class in ruby
 
 Every object-oriented developer should be well familiar with the so called Four Pillars OOP:
 
-Encapsulation - Removing access to parts of your code and making things private is exactly what Encapsulation is all about (often times, people refer to it as data hiding).
+Encapsulation - Removing access to parts of your code and making things private. (often times, people refer to it as data hiding).
   
-   
 Inheritance - Inheritance lets one object acquire the properties and methods of another object.
+
 Polymorphism -"the condition of occurring in several different forms."
+
 Abstraction - To abstract something away means to hide away the implementation details inside something – sometimes a prototype, sometimes a function. So when you call the function you dont have to understand exactly what it is doing.
+
  - Describe making coffee
 
 

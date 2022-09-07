@@ -6,7 +6,7 @@
 
 What is: 
 - A function? 
-- iteration
+- built in iteration
 
 
 

@@ -133,6 +133,7 @@ end
 
 **EXTRA**
 Can use a range to populate an array in a couple different ways:
+<!-- splat operator research -->
 nums = [*1..9]
 nums = Array(1..10)
 (1..5).to_a

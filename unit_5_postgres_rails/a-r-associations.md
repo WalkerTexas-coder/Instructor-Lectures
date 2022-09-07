@@ -3,15 +3,15 @@ Active record associations
 Whats the point of databases?
 The problem of persistent data storage
 
-There are two types of digital information: input and output data. Users provide the input data. Computers provide output data. But a computer's CPU can't compute anything or produce output data without the user's input. 
+  There are two types of digital information: input and output data. Users provide the input data. Computers provide output data. But a computer's CPU can't compute anything or produce output data without the user's input. 
 
-Users can enter the input data directly into a computer. However, they have found early on in the computer-era that continually entering data manually is time- and energy-prohibitive. One short-term solution is computer memory, also known as random access memory (RAM). But its storage capacity and memory retention are limited. Read-only memory (ROM) is, as the name suggests, the data can only be read but not necessarily edited. They control a computer's basic functionality. 
+  Users can enter the input data directly into a computer. However, they have found early on in the computer-era that continually entering data manually is time- and energy-prohibitive. One short-term solution is computer memory, also known as random access memory (RAM). But its storage capacity and memory retention are limited. Read-only memory (ROM) is, as the name suggests, the data can only be read but not necessarily edited. They control a computer's basic functionality. 
 
-Although advances have been made in computer memory, with other forms of short term memory, When a computer powers down, so does the RAM's ability to retain data. The solution? Data storage. 
+  Although advances have been made in computer memory, with other forms of short term memory, When a computer powers down, so does the RAM's ability to retain data. The solution? Data storage. 
 
-With data storage space, users can save data onto a device. And should the computer power down, the data is retained. And instead of manually entering data into a computer, users can instruct the computer to pull data from storage devices. Computers can read input data from various sources as needed, and it can then create and save the output to the same sources or other storage locations. Users can also share data storage with others. 
+  With data storage space, users can save data onto a device. And should the computer power down, the data is retained. And instead of manually entering data into a computer, users can instruct the computer to pull data from storage devices. Computers can read input data from various sources as needed, and it can then create and save the output to the same sources or other storage locations. Users can also share data storage with others. 
 
-The kind of database we are learning about is a relational database. The Idea of a relational database was first described by a man named Edgar Frank Codd, while working for IBM. The idea of a relational model for databases revolutionized the way we took in data and really unlocked a lot of the way the world works today. 
+The kind of database we are learning about is a relational database. The Idea of a relational database was first described by a man named Edgar Frank Codd, while working for IBM. The idea of a relational model for databases revolutionized the way we took in data and really unlocked a lot of the way the world works today. Relational databases changed how we manage finances to farming and all through Computer programs.
 
 
 ### Rails supports six types of associations:
@@ -54,7 +54,8 @@ For today's example we are going to
 => #<ActiveRecord::Relation [#<Person id: 1, name: "Joe", phone: "555-3456", created_at: "2020-03-04 18:52:19", updated_at: "2020-03-04 18:52:19">, #<Person id: 2, name: "Jane", phone: "555-7890", created_at: "2020-03-04 18:52:27", updated_at: "2020-03-04 18:52:27">]>
 
 
- $ rails generate model BlogPost bleongs_to :use
+ $ rails generate model BlogPost title:string post:text img_url:string
+ 
 
 #### Lets checkout the new model file that was created alongside our user
 
@@ -83,10 +84,19 @@ end
 
 To create a new entry of an blogpost, we have to assign it to an instance of user. An blogpost entry cannot exist unless it is attached to a User. To make our first User's blog post we first create a variable to store the entry of one user.
 
-# console commands
- $ rails c
-> kicker = User.first
-> p kicker
+
+
+## Creating Blog Posts
+- While we can forcibly pass a foreign_key to a blog-post creation, it's better to let rails handle the association between the tables on it's own. 
+
+We can do this by: 
+1. Establishing a variable of the user that is making a post
+  > kicker = User.where(user_name:'wizard_kicker')[0]
+    (.where returns an array)
+2. Calling on the variable and appending the associated table pluralized because the kind of relationship 
+  > kicker.blog_posts
+3. Pass the create method with all of the needed arguments WITHOUT the foreign_key
+  > kicker.blog_posts.create ...
 
 ### next we need a somewhat familiar but new style of entry for our data
 
@@ -98,7 +108,7 @@ create
 
 We do not provide the foreign key but rather the convention is to let rails apply the foreign key for us.
 
-> kicker.blog_posts.create title:"My trip to Scotland", post:"You would not believe the different kinds of wizards they have in Scotland, I found a whole train of them.", image_url:"https://www.worldtravelguide.net/wp-content/uploads/2017/03/shu-UK-Scotland-GlenfinnanViaduct_351622814-1440x823-1.jpg" 
+> kicker.blog_posts.create title:"My trip to Scotland", post:"You would not believe how many wizards they have in Scotland, I found a whole train of them.", image_url:"https://www.worldtravelguide.net/wp-content/uploads/2017/03/shu-UK-Scotland-GlenfinnanViaduct_351622814-1440x823-1.jpg" 
 
 > kicker.blog_posts.create title:"My trip to Washington" post:"Iheard there was a group of wizards in washinton but turns out they're not real wizards... or were they." image_url:"https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Washington_Wizards_logo.svg/1200px-Washington_Wizards_logo.svg.png" 
 

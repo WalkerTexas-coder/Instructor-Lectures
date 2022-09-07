@@ -181,7 +181,7 @@ Parameters: {"style"=>"foster"}
 ### Number of Sweaters
 ```ruby
 def quantity
-  @random_food_sweater_quantity = params[:number]
+  @random_food_quantity = params[:number]
 end
 url: http://localhost:3000/quantity/8
 ```

@@ -141,13 +141,7 @@ end
 So we've bounced back once lets bounce again over to routes 
 
 ##  ~~~~~~~~
-##  ~~~~~~~~ DOWN HERE
-## Root_to
 
-In routes I want to make a landing page for my user so they see what they want as soon as they navigate to my site so in my routes I am going to add my root
-```
-root'food#nachos'
-```
 
 # Recap 1
 So to recap so far we have
@@ -193,6 +187,8 @@ this file also takes html tags so all you html wizards can have fun in here
 But Austin, I hear you saying, How do we get these html.erb files to show up? How does rails know which one is which? Great question
 
 We need to bounce back over to our controller and tell our controller that these views exist
+
+
 
 ```ruby
 ## add the render to controller 
@@ -240,6 +236,19 @@ app/views/ControllerName/method_name.html.erb
 typing into the url the different pages is wack-- lets make some links for our user to follow.
 bounce back to our ERB files and inside them we 
 can put 
+
+### Home
+  Lets make a view called home that wll handle all of our food links for us and tell us a bit about tyh individuals who helped make this application 
+
+
+##  ~~~~~~~~ DOWN HERE
+## Root_to
+
+In routes I want to make a landing page for my user so they see what they want as soon as they navigate to my site so in my routes I am going to add my root
+```
+root'food#nachos'
+```
+
 
 
 /views/food/home.html.erb

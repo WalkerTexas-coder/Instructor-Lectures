@@ -8,7 +8,7 @@ Write a meaningful Test
 ```Ruby
 RSpec.describe Cat, type: :model do
   it "should validate name" do
-    cat = Cat.create
+    cat = Cat.create images : 'https://thiscatdoesnotexist.com/'
     # If cat's name field is empty throw an error
     expect(cat.errors[:name]).to_not be_empty
   end

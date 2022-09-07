@@ -28,14 +28,15 @@ let string = "the world and all its peoples"
   value={ this.state.userInput }
 />
 ```
+
 # onChange
 All inputs are listening for events. Developers can use the onChange method to execute logic every time there is a change on an element. In React, the onChange attribute can call a function that will update the state object and reflect back in the current value. It is customary to have an onChange listener associate with a handler method. Handler methods are named to associate their action with a particular event. By convention, a developer would know that a method called handleChange would be associated with an onChange event and a method called handleClick would be associated with an onClick event.
 
 ```javascript
 <input
   type="text"
-  value={ this.state.userInput }
-  onChange={ this.handleChange }
+  value={ userInput }
+  onChange={handleChange }
 />
 ```
 # Handle Change
@@ -53,6 +54,7 @@ handleChange = (e) => {
 }
 handleChange = (e) => {
   console.log(e.target.value);
+  setUserInput(e.target.value)
 }
 ```
 Now that we have targeted the input, we can extract the value from the input field and set it to state.
@@ -60,37 +62,24 @@ Now that we have targeted the input, we can extract the value from the input fie
 
 
 ```javascript
-class App extends Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      userInput: ""
-    }
+import React, { useState } from "react"
+
+const App = () => {
+  const [userInput, setUserInput] = useState("")
+
+  const handleChange = (e) => {
+    console.log(e.target.value)
+    setUserInput(e.target.value)
   }
 
-  handleChange = (e) => {
-    // console.log(e);
-    // console.log(e.target);
-    // console.log(e.target.value);
-    this.setState({ userInput: e.target.value})
-  }
-
-
-  render(){
-    return(
-      <>
-        <input 
-          type="text" 
-          value={this.state.userInput} 
-          onChange={this.handleChange}
-        />
-        <button onClick={(()=> console.log(this.state))}>
-          State button
-        </button>
-        <h4>{this.state.userInput}</h4>
-      </>
-    )
-  }
+  return (
+    <>
+      <input type="text" value={userInput} onChange={handleChange} />
+      
+      {userInput.map((output, index)=>{
+        return <p key={index} > {output} </p>
+      })}
+    </>
+  )
 }
 export default App
-```

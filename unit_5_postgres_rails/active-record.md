@@ -2,21 +2,27 @@
 
 Create a file for documentation in the lectures-notes repo.
 
-At its core, Rails is a collection of gems plus some base code to tie them all together. One of the fundamental gems is Active Record. Active Record is an ORM which stands for Object Relational Mapping. This allow developers to write SQL queries in a language that is not SQL. So Active Record was created by Rails to act as a layer that wraps around the database - in our case Postgres, so that we can write SQL queries in Ruby code.
+At its core, Rails is a collection of gems plus some base code to tie them all together. One of the fundamental gems is Active Record. Active Record is its a technology that lives inside of rails. Specifically Active record is an ORM which stands for Object Relational Mapping. This allow developers to write SQL queries, like we did this morning, in a language that is not SQL. So Active Record was created by Rails to act as a layer that wraps around the database - in our case Postgres, so that we can write SQL queries in Ruby code.
 
 Active Record is a design pattern that maps rows in a database to objects in a running application. It allows methods to be called on objects (like new, save) and have the changes persisted in the database.
 
-Remember that Ruby is a very, very object-oriented programming language. If we can think about the database in terms of a collection of tables - think of the database as being an Excel file and the tables are all different sheets within that file. A table has rows and columns. Each row has a name and each column has an input of data.
+Remember that Ruby is a very, very object-oriented programming language. If we can think about the database in terms of a collection of tables - think of the database as being like our Google sheets file and the tables are all different sheets within that file. A table has rows and columns. Each row has a primary_key and each column has an input of data.
 
 Active Record allows us to treat our database tables as classes. The tables can have relationships with each other in the same way classes can have relationships.
 
-So right now we have a lovely, empty database. So we want to add table. Eventually we will add many tables to our database, but for today, we will add one table. We can think of our database like a big empty room. And by adding a table we are putting a file cabinet in that room. And now we can store documents, or pieces of information in that file cabinet.
+So right now we have a lovely, empty database. So we want to add table. Eventually we will add many tables to our database, but for today, we will add one table. We can think of our database like a big empty room. And by adding a table we are putting a shelf in that room. And now we can store documents, or books, or pieces of information in that shelf.
 
 
 ### Generate Commands
-Adding a table to the database will require two things: 1) A Rails generate command, and 2) some Active Record datatypes. So let's talk about these two things.
+Adding a table to the database will require two things: 
+
+1) A Rails generate command
+2) And some Active Record datatypes. 
+
+So let's talk about these two things.
 
 1) Remember that Rails is super picky. So if we are going to make structural changes to our app - meaning making files and folders, for the most part we don't do this manually. Rails provides us commands that will add files and other structure to the application so that it is done exactly the right way and named and connected exactly the right way. By using these commands we are allowing Rails to control the structure of the the files we are creating. There is a collection of these types of commands and we will see a lot of them over the next few days.
+
 
 So the command to create a new table in Postgres is:
 

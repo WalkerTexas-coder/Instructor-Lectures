@@ -37,34 +37,34 @@
 
 ###   Getter / Accessor Method
 
-            def get_restaurant
-                @restaurant
-            end
+        def get_restaurant
+            @restaurant
+        end
 
-            - sandwhich_order.get_restaurant
+        - sandwhich_order.get_restaurant
 
 ###   Setter Method
 
-            def set_restaurant (restaurant_name)
-                @restaurant = restaurant_name
-            end
+        def set_restaurant (restaurant_name)
+            @restaurant = restaurant_name
+        end
 
-            - sandwhich_order = FoodOrder.new
-            - sandwhich_order.set_name("Jimmy Johns")
+        - sandwhich_order = FoodOrder.new
+        - sandwhich_order.set_name("Jimmy Johns")
 
 ###   Class Initialization
-        def initialize
-             @restaurant = "Jimmy Johns"
-             @orderTime = Time.now
-        end
+    def initialize
+          @restaurant = "Jimmy Johns"
+          @orderTime = Time.now
+    end
 
 
 #   Class Initialization w/ Arguments
-        def initialize(restaurant_name, item_order)
-            @restaurant = restaurant_name
-            @item_order = item_order
-            @orderTime = Time.now
-        end
+    def initialize(restaurant_name, item_order)
+        @restaurant = restaurant_name
+        @item_order = item_order
+        @orderTime = Time.now
+    end
 ### A quick recap of where we're at
         # we can declare a class
         # we can initalize class values by passing arguments
